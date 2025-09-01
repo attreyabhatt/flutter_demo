@@ -75,13 +75,17 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(sliderValue);
               },
             ),
-            GestureDetector(
+            InkWell(
               onTap: () {
                 setState(() {
                   print('image tapped');
                 });
               },
-              child: Image.asset('assets/images/bg.jpg'),
+              child: Container(
+                height: 200,
+                width: double.infinity,
+                color: Colors.white12,
+              ),
             ),
           ],
         ),
