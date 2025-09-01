@@ -75,7 +75,14 @@ class _ProfilePageState extends State<ProfilePage> {
                 print(sliderValue);
               },
             ),
-            Image.asset('assets/images/bg.jpg'),
+            GestureDetector(
+              onTap: () {
+                setState(() {
+                  print('image tapped');
+                });
+              },
+              child: Image.asset('assets/images/bg.jpg'),
+            ),
           ],
         ),
       ),
