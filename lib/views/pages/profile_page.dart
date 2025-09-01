@@ -14,67 +14,70 @@ class _ProfilePageState extends State<ProfilePage> {
   double sliderValue = 0.0;
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(20.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          TextField(
-            controller: controller,
-            decoration: InputDecoration(border: OutlineInputBorder()),
-            onEditingComplete: () {
-              setState(() {});
-            },
-          ),
-          Text(controller.text),
-          Checkbox.adaptive(
-            tristate: true,
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          CheckboxListTile.adaptive(
-            tristate: true,
-            title: Text('Click me'),
-            value: isChecked,
-            onChanged: (bool? value) {
-              setState(() {
-                isChecked = value;
-              });
-            },
-          ),
-          Switch.adaptive(
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          SwitchListTile.adaptive(
-            title: Text('Switch me'),
-            value: isSwitched,
-            onChanged: (bool value) {
-              setState(() {
-                isSwitched = value;
-              });
-            },
-          ),
-          Slider(
-            max: 10,
-            divisions: 10,
-            value: sliderValue,
-            onChanged: (double value) {
-              setState(() {
-                sliderValue = value;
-              });
-              print(sliderValue);
-            },
-          ),
-        ],
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextField(
+              controller: controller,
+              decoration: InputDecoration(border: OutlineInputBorder()),
+              onEditingComplete: () {
+                setState(() {});
+              },
+            ),
+            Text(controller.text),
+            Checkbox.adaptive(
+              tristate: true,
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            CheckboxListTile.adaptive(
+              tristate: true,
+              title: Text('Click me'),
+              value: isChecked,
+              onChanged: (bool? value) {
+                setState(() {
+                  isChecked = value;
+                });
+              },
+            ),
+            Switch.adaptive(
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            SwitchListTile.adaptive(
+              title: Text('Switch me'),
+              value: isSwitched,
+              onChanged: (bool value) {
+                setState(() {
+                  isSwitched = value;
+                });
+              },
+            ),
+            Slider(
+              max: 10,
+              divisions: 10,
+              value: sliderValue,
+              onChanged: (double value) {
+                setState(() {
+                  sliderValue = value;
+                });
+                print(sliderValue);
+              },
+            ),
+            Image.asset('assets/images/bg.jpg'),
+          ],
+        ),
       ),
     );
   }
