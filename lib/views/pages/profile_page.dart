@@ -83,11 +83,25 @@ class _ProfilePageState extends State<ProfilePage> {
                 });
               },
               child: Container(
-                height: 200,
+                height: 50,
                 width: double.infinity,
                 color: Colors.white12,
               ),
             ),
+            ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.teal,
+                foregroundColor: Colors.white,
+              ),
+              child: Text('Submit'),
+            ),
+            ElevatedButton(onPressed: () {}, child: Text('Submit')),
+            FilledButton(onPressed: () {}, child: Text('Submit')),
+            TextButton(onPressed: () {}, child: Text('Submit')),
+            OutlinedButton(onPressed: () {}, child: Text('Submit')),
+            CloseButton(),
+            BackButton(),
           ],
         ),
       ),
