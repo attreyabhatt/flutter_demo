@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(20.0),
       child: Column(
         children: [
-          HeroWidget(),
+          HeroWidget(title: 'Flutter Mapp'),
           Container(
             padding: EdgeInsets.symmetric(vertical: 10.0),
             width: double.infinity,
