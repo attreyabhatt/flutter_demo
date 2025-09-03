@@ -12,6 +12,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController controllerEmail = TextEditingController();
   TextEditingController controllerPw = TextEditingController();
+  String confirmedEmail = '123';
+  String confirmedPw = '456';
 
   //trigger when the login page is closeed.
   @override
@@ -61,14 +63,7 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(height: 20.0),
             FilledButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) {
-                      return WidgetTree();
-                    },
-                  ),
-                );
+                onLoginPressed();
               },
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 40.0),
@@ -79,5 +74,20 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
     );
+  }
+
+  void onLoginPressed() {
+    if (confirmedEmail == controllerEmail.text &&
+        confirmedPw == controllerPw.text) {
+      //use pushReplacement when when you dont want the previous pages to be remembered so no back button
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) {
+            return WidgetTree();
+          },
+        ),
+      );
+    }
   }
 }
