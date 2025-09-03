@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/views/widget_tree.dart';
 import 'package:flutter_demo/views/widgets/hero_widget.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,20 +10,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  TextEditingController controller = TextEditingController();
-
-  //triggers when the login page is opened
-  @override
-  void initState() {
-    print('initState');
-    super.initState();
-  }
+  TextEditingController controllerEmail = TextEditingController();
+  TextEditingController controllerPw = TextEditingController();
 
   //trigger when the login page is closeed.
   @override
   void dispose() {
     //removing the controller after the login page is closed
-    controller.dispose();
+    controllerEmail.dispose();
+    controllerPw.dispose();
     super.dispose();
   }
 
@@ -31,16 +27,53 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
             HeroWidget(title: 'Login'),
+            SizedBox(height: 20.0),
             TextField(
-              controller: controller,
-              decoration: InputDecoration(border: OutlineInputBorder()),
+              controller: controllerEmail,
+              decoration: InputDecoration(
+                hintText: 'Email',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+              ),
               onEditingComplete: () {
                 setState(() {});
               },
+            ),
+
+            SizedBox(height: 10.0),
+            TextField(
+              controller: controllerPw,
+              decoration: InputDecoration(
+                hintText: 'Password',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15.0),
+                ),
+              ),
+              onEditingComplete: () {
+                setState(() {});
+              },
+            ),
+            SizedBox(height: 20.0),
+            FilledButton(
+              onPressed: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return WidgetTree();
+                    },
+                  ),
+                );
+              },
+              style: FilledButton.styleFrom(
+                minimumSize: Size(double.infinity, 40.0),
+              ),
+              child: Text('Login'),
             ),
           ],
         ),

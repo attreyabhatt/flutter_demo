@@ -55,7 +55,7 @@ class WelcomePage extends StatelessWidget {
               style: FilledButton.styleFrom(
                 minimumSize: Size(double.infinity, 40.0),
               ),
-              child: Text('Login', style: TextStyle(color: Colors.white)),
+              child: Text('Login'),
             ),
           ],
         ),

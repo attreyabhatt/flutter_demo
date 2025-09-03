@@ -16,7 +16,7 @@ class HeroWidget extends StatelessWidget {
             child: Image.asset(
               'assets/images/bg.jpg',
               color: Colors.teal,
-              colorBlendMode: BlendMode.darken,
+              colorBlendMode: BlendMode.color,
             ),
           ),
         ),
@@ -24,10 +24,9 @@ class HeroWidget extends StatelessWidget {
           child: Text(
             title,
             style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 50.0,
-              letterSpacing: 40.0,
-              color: Colors.white60,
+              fontSize: 40.0,
+              letterSpacing: 30.0,
+              color: Colors.tealAccent,
             ),
           ),
         ),
