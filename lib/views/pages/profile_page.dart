@@ -15,13 +15,14 @@ class ProfilePage extends StatelessWidget {
             title: Text('Logout'),
             onTap: () {
               selectedPageNotifier.value = 0;
-              Navigator.push(
+              Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
                     return WelcomePage();
                   },
                 ),
+                (route) => false,
               );
             },
           ),

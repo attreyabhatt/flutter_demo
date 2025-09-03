@@ -85,14 +85,16 @@ class _LoginPageState extends State<LoginPage> {
   void onLoginPressed() {
     if (confirmedEmail == controllerEmail.text &&
         confirmedPw == controllerPw.text) {
-      //use pushReplacement when when you dont want the previous pages to be remembered so no back button
-      Navigator.pushReplacement(
+      //use pushAndRemoveUntil when you want to replave the delete all the
+      //pages but want the current page to be swaped out for target page.
+      Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
           builder: (context) {
             return WidgetTree();
           },
         ),
+        (route) => false,
       );
     }
   }
