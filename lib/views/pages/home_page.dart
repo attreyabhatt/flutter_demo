@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/data/constants.dart';
+import 'package:flutter_demo/views/widgets/container_widget.dart';
 import 'package:flutter_demo/views/widgets/hero_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -8,29 +8,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20.0),
+      padding: const EdgeInsets.symmetric(horizontal: 20.0),
       child: SingleChildScrollView(
         child: Column(
           children: [
             HeroWidget(title: 'Flutter Mapp'),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 10.0),
-              width: double.infinity,
-              child: Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Basic Layout', style: KTextStyle.titleTealText),
-                      Text(
-                        'The description of this',
-                        style: KTextStyle.descriptionText,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+            ContainerWidget(
+              title: 'Basic Layout',
+              description: 'This description of this.',
+            ),
+            ContainerWidget(
+              title: 'Basic Layout',
+              description: 'This description of this.',
+            ),
+            ContainerWidget(
+              title: 'Basic Layout',
+              description: 'This description of this.',
             ),
           ],
         ),
