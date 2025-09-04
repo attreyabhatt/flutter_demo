@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/data/constants.dart';
+import 'package:flutter_demo/views/pages/course_page.dart';
 import 'package:flutter_demo/views/widgets/container_widget.dart';
 import 'package:flutter_demo/views/widgets/hero_widget.dart';
 
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: [
-            HeroWidget(title: 'Flutter Mapp'),
+            HeroWidget(title: 'Flutter Mapp', nextPage: CoursePage()),
             ...List.generate(cardList.length, (index) {
               return ContainerWidget(
                 title: cardList.elementAt(index),
