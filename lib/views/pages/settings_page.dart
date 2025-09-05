@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/views/pages/expanded_flexible_test.dart';
 
 class SettingsPage extends StatefulWidget {
   final String title;
@@ -148,7 +149,19 @@ class _SettingsPageState extends State<SettingsPage> {
                 ),
                 child: Text('Submit'),
               ),
-              ElevatedButton(onPressed: () {}, child: Text('Submit')),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) {
+                        return ExpandedFlexiblePage();
+                      },
+                    ),
+                  );
+                },
+                child: Text('Show Flexible and Expanded'),
+              ),
               FilledButton(onPressed: () {}, child: Text('Submit')),
               TextButton(onPressed: () {}, child: Text('Submit')),
               OutlinedButton(onPressed: () {}, child: Text('Submit')),
